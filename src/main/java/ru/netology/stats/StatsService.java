@@ -19,7 +19,7 @@ public class StatsService {
 
     public int getNumOfMonthMaxSale(int[] sales) { //3. месяц макс.суммы
         int maxMonth = 0;
-        for (int i : sales) { //перебери всех
+        for (int i = 0; i < sales.length; i++) { //перебери все значения
             if(sales[i] >= sales[maxMonth]) { //или равно?
                 maxMonth = i; //сохрани, если i-продажа большая
             }
@@ -29,7 +29,7 @@ public class StatsService {
 
     public int getNumOfMonthMinSale(int[] sales) { //4. месяц мин.суммы
         int minMonth = 0;
-        for (int i : sales) { //перебери всех
+        for (int i = 0; i < sales.length; i++) { //перебери всех
             if(sales[i] <= sales[minMonth]) { //или равно? //если меньше минимального
                 minMonth = i; //сохрани, если i-продажа большая
             }
@@ -40,7 +40,7 @@ public class StatsService {
     public int getAmountMonthUnderAvg(int[] sales) { //где-то дабл?
         double avg = getAvgSumSales(sales);
         int monthUnderAvg = 0;
-        for (int i : sales) {
+        for (int i = 0; i < sales.length; i++) {
             if(sales[i] < avg) {
                 monthUnderAvg++;
             }
@@ -51,7 +51,7 @@ public class StatsService {
     public int getAmountMonthOverAvg(int[] sales) { //где-то дабл?
         double avg = getAvgSumSales(sales);
         int monthOverAvg = 0;
-        for (int i : sales) {
+        for (int i = 0; i < sales.length; i++) {
             if(sales[i] > avg) {
                 monthOverAvg++;
             }
